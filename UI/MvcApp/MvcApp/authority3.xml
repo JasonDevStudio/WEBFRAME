@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+    <menu id="m_1" url="/Home/Index" name="首页" visible="true" icon="fa fa-home" >
+        <authority isAuthorize="true" userId="0505" />
+    </menu>
+    <menu id="m_2" url="" name="数据导入" visible="false" icon="fa fa-file-text-o">
+        <submenu id="m_2_1" name="核增导入" url="/NuclearGrowth/Index" visible="true" icon="">
+            <authority isAuthorize="true" userId="05051" />
+        </submenu>
+        <submenu id="m_2_2" name="核扣导入" url="/NuclearButton/Index" visible="true" icon="">
+            <authority isAuthorize="true" userId="05051" />
+        </submenu>
+    </menu>
+    <menu id="m_3" url="" name="入出仓查询" visible="true" icon="fa fa-file-text-o">
+        <authority isAuthorize="true" userId="05052" />
+
+        <submenu id="m_3_1" name="入仓查询" url="/NuclearGrowth/Index" visible="true" icon="">
+            <authority isAuthorize="true" userId="0505" />
+            <action url="/Home/main" name="报关单打印" visible="true" icon="fa fa-file-text-o" >
+                <authority isAuthorize="true" userId="0505" />
+            </action>
+            <action url="" name="复核表打印" visible="true" icon="fa fa-file-text-o" >
+                <authority isAuthorize="true" userId="0505" />
+            </action>
+        </submenu>
+        <submenu id="m_3_2" name="出仓查询" url="/NuclearButton/Index" visible="true" icon="">
+            <authority isAuthorize="true" userId="0505" />
+        </submenu>
+        <submenu id="m_3_3" name="反馈信息查询" url="/Retroaction/Index" visible="true" icon="">
+            <authority isAuthorize="true" userId="0505" />
+        </submenu>
+    </menu>
+</root>

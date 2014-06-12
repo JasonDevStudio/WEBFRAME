@@ -1,0 +1,34 @@
+﻿@{ 
+    Layout = "~/Views/Shared/_Layout_Content.cshtml";
+}
+@using DevExpress.Web.Mvc.UI
+
+<input id="File1" type="file" />
+
+
+
+@{
+    DevExpress.XtraReports.Web.ReportToolbarButton btn = new DevExpress.XtraReports.Web.ReportToolbarButton();
+    btn.ImageUrl = Url.Content("~/Content/Images/print.png");
+    btn.ItemKind = DevExpress.XtraReports.Web.ReportToolbarItemKind.SaveToDisk;
+    btn.ToolTip = "报关单打印";
+    
+    
+    }
+    @Html.DevExpress().ReportToolbar(
+            settings =>
+            {
+                settings.Name = "ReportToolbar";
+                settings.Items.Add(btn);
+                settings.ReportViewerName = "ReportViewer1";
+            }
+        ).GetHtml()
+
+      @Html.DevExpress().ReportViewer(
+        settings => {
+        settings.Name = "ReportViewer1";
+        settings.Report = new DevExpress.XtraReports.UI.XtraReport();
+        settings.CallbackRouteValues = new { Controller = "Home", Action = "List", ReportID = "1" };
+        settings.ExportRouteValues = new { Controller = "Home", Action = "List", ReportID = "1" }; 
+    }
+).GetHtml()

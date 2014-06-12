@@ -1,0 +1,10 @@
+D:\99-物流项目\源码\02-华南综合业务集成平台WEB\ILIMSWEB\Tests\Library.Logic.DAL.Tests\bin\Debug\Library.Logic.DAL.Tests.dll
+D:\99-物流项目\源码\02-华南综合业务集成平台WEB\ILIMSWEB\Tests\Library.Logic.DAL.Tests\bin\Debug\Library.Logic.DAL.Tests.pdb
+D:\99-物流项目\源码\02-华南综合业务集成平台WEB\ILIMSWEB\Tests\Library.Logic.DAL.Tests\obj\Debug\Library.Logic.DAL.Tests.dll
+D:\99-物流项目\源码\02-华南综合业务集成平台WEB\ILIMSWEB\Tests\Library.Logic.DAL.Tests\obj\Debug\Library.Logic.DAL.Tests.pdb
+D:\99-物流项目\源码\02-华南综合业务集成平台WEB\ILIMSWEB\Tests\Library.Logic.DAL.Tests\obj\Debug\Library.Logic.DAL.Tests.csprojResolveAssemblyReference.cache
+D:\99-物流项目\源码\01-华南综合业务集成平台\SourceWeb\ILIMSWEB\Tests\Library.Logic.DAL.Tests\bin\Debug\Library.Logic.DAL.Tests.dll
+D:\99-物流项目\源码\01-华南综合业务集成平台\SourceWeb\ILIMSWEB\Tests\Library.Logic.DAL.Tests\bin\Debug\Library.Logic.DAL.Tests.pdb
+D:\99-物流项目\源码\01-华南综合业务集成平台\SourceWeb\ILIMSWEB\Tests\Library.Logic.DAL.Tests\obj\Debug\Library.Logic.DAL.Tests.csprojResolveAssemblyReference.cache
+D:\99-物流项目\源码\01-华南综合业务集成平台\SourceWeb\ILIMSWEB\Tests\Library.Logic.DAL.Tests\obj\Debug\Library.Logic.DAL.Tests.dll
+D:\99-物流项目\源码\01-华南综合业务集成平台\SourceWeb\ILIMSWEB\Tests\Library.Logic.DAL.Tests\obj\Debug\Library.Logic.DAL.Tests.pdb

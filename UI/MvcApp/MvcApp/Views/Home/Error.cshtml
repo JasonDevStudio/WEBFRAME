@@ -1,0 +1,22 @@
+﻿@{ 
+    Layout = "~/Views/Shared/_Layout_Content.cshtml";
+}
+<link href="@Url.Content("~/Content/pages/error.css")" rel="stylesheet" type="text/css" />
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="row">
+    <div class="col-md-12 page-500">
+        <div class=" number">
+            Sorry
+        </div>
+        <div class=" details">
+            <h3>@ViewData["Msg"]</h3> 
+            <p>
+            @ViewData["MsgDetail"]
+            </p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = Library.StringItemDict.BaseDict.WebSysTitle;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+ 
+@section Scripts{
+    <script type="text/javascript">
+        $(function () {
+            window.parent.location = "@Url.Action("Index","Login")";
+        });
+        </script> 
+}

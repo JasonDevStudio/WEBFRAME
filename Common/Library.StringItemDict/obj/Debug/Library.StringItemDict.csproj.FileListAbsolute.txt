@@ -1,0 +1,9 @@
+D:\99-物流项目\源码\02-华南综合业务集成平台WEB\ILIMSWEB\Common\Library.StringItemDict\bin\Debug\Library.StringItemDict.dll
+D:\99-物流项目\源码\02-华南综合业务集成平台WEB\ILIMSWEB\Common\Library.StringItemDict\bin\Debug\Library.StringItemDict.pdb
+D:\99-物流项目\源码\02-华南综合业务集成平台WEB\ILIMSWEB\Common\Library.StringItemDict\obj\Debug\Library.StringItemDict.dll
+D:\99-物流项目\源码\02-华南综合业务集成平台WEB\ILIMSWEB\Common\Library.StringItemDict\obj\Debug\Library.StringItemDict.pdb
+D:\99-物流项目\源码\01-华南综合业务集成平台\SourceWeb\ILIMSWEB\Common\Library.StringItemDict\bin\Debug\Library.StringItemDict.dll
+D:\99-物流项目\源码\01-华南综合业务集成平台\SourceWeb\ILIMSWEB\Common\Library.StringItemDict\bin\Debug\Library.StringItemDict.pdb
+D:\99-物流项目\源码\01-华南综合业务集成平台\SourceWeb\ILIMSWEB\Common\Library.StringItemDict\obj\Debug\Library.StringItemDict.dll
+D:\99-物流项目\源码\01-华南综合业务集成平台\SourceWeb\ILIMSWEB\Common\Library.StringItemDict\obj\Debug\Library.StringItemDict.pdb
+D:\99-物流项目\源码\01-华南综合业务集成平台\SourceWeb\ILIMSWEB\Common\Library.StringItemDict\obj\Debug\Library.StringItemDict.csprojResolveAssemblyReference.cache

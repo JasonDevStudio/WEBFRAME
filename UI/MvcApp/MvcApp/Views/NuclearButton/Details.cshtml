@@ -1,0 +1,786 @@
+﻿@using Library.StringItemDict;
+@using MvcApp.Helpers;
+@using MvcApp.Models.EBooks;
+@model NuclearButtonEditModel
+@{ 
+    Layout = "~/Views/Shared/_Layout_Content.cshtml";
+}
+<center>
+<div class="col-md-12" style="width: 1300px;padding-top:10px;text-align:left;">
+    <!-- BEGIN SAMPLE TABLE PORTLET-->
+    <div class="portlet">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-bell-o"></i>核扣单详情</div>
+            <div class="tools">
+                <a class="collapse" href="javascript:;"></a>@* <a class="config" href="#portlet-config" data-toggle="modal"></a>
+                <a class="reload" href="javascript:;"></a>
+                <a class="remove" href="javascript:;"></a>*@
+            </div>
+        </div>
+        <div class="portlet-body" style="height: auto; overflow-y:no;overflow-x:no;">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover" style="width:1300px;table-layout:fixed;">
+                    <tbody>
+                        <tr>
+                            <td class="custom_col_active">
+                                订单号
+                            </td>
+                            <td style="width:130px;">
+                                @Model.bill_id
+                            </td>
+                            <td class="custom_col_active">
+                                通关状态
+                            </td>
+                            <td class="success">
+                                @Universal.GetApprovalStatusName(Model.status)
+                            </td>
+                            <td class="custom_col_active">
+                                核扣日期
+                            </td>
+                            <td>
+                                @Model.out_date.ToString("yyyy-mm-dd")
+                            </td>
+                            <td class="custom_col_active">
+                                报关单号
+                            </td>
+                            <td style="width:130px;">
+                                @Model.refer_doc
+                            </td>
+                            <td class="custom_col_active">
+                                MCC业务号
+                            </td>
+                            <td>
+                                @Model.mcc_no
+                            </td>
+                            <td class="custom_col_active">
+                                操作员
+                            </td>
+                            <td>
+                                @Model.creater_name
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="custom_col_active">
+                                货物类型
+                            </td>
+                            <td>
+                                @Model.lading_type
+                            </td>
+                            <td class="custom_col_active">
+                                客户名称
+                            </td>
+                            <td>
+                                @Universal.GetCustommerName(Model.lease_holder)
+                            </td>
+                            <td class="custom_col_active">
+                                出仓方式
+                            </td>
+                            <td>
+                                @Universal.GetStatusName(_Dictionary.OutType, Model.out_type)
+                            </td>
+                            <td class="custom_col_active">
+                                报关类型
+                            </td>
+                            <td class="line-wrap">
+                                @Universal.GetStatusName(_Dictionary.Ywlx, Model.dec_type)
+                            </td>
+                            <td class="custom_col_active">
+                                司机本编号
+                            </td>
+                            <td>
+                                @Model.driver_no
+                            </td>
+                            <td class="custom_col_active">
+                                车牌号
+                            </td>
+                            <td>
+                                @Model.car_no
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="custom_col_active">
+                                总件数
+                            </td>
+                            <td class="warning">
+                                @Model.pkgs_num
+                            </td>
+                            <td class="custom_col_active">
+                                总毛重
+                            </td>
+                            <td class="warning">
+                                @Model.gross_wt
+                            </td>
+                            <td class="custom_col_active">
+                                总净重
+                            </td>
+                            <td class="warning">
+                                @Model.net_wt
+                            </td>
+                            <td class="custom_col_active">
+                                总价值
+                            </td>
+                            <td class="warning">
+                                @Model.all_value
+                            </td>
+                            <td class="custom_col_active">
+                                币制
+                            </td>
+                            <td>
+                                @Universal.GetStatusName(_Dictionary.ParaExchrate, Model.curr_code)
+                            </td>
+                            <td class="custom_col_active">
+                                装船单号
+                            </td>
+                            <td>
+                                @Model.shipping_no
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="custom_col_active" >
+                                核扣备注
+                            </td>
+                            <td colspan="3" class="line-wrap">
+                                @Model.remark 
+                            </td>
+                            <td class="custom_col_active">
+                                核增类型
+                            </td>
+                            <td class="">
+                                @Universal.GetStatusName(_Dictionary.HZKType, Model.hzhk_type)
+                            </td>
+                            <td class="custom_col_active">
+                                电子账册编号
+                            </td>
+                            <td>
+                                @Model.cns_no
+                            </td>
+                            <td class="custom_col_active">
+                                核扣编号
+                            </td>
+                            <td class="line-wrap">
+                                @Model.cust_bill_id
+                            </td>
+                            <td class="custom_col_active">
+                                封条
+                            </td>
+                            <td>
+                                @Model.seal_no
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="custom_col_active">
+                                进出口岸
+                            </td>
+                            <td>
+                                @Universal.GetStatusName(_Dictionary.Port, Model.ie_port)
+                            </td>
+                            <td class="custom_col_active">
+                                备案号
+                            </td>
+                            <td class="">
+                                @Model.bah
+                            </td>
+                            <td class="custom_col_active">
+                                进出口日期
+                            </td>
+                            <td>
+                                @Model.ie_date.ToString("yyyy-MM-dd")
+                            </td>
+                            <td class="custom_col_active">
+                                提运单号
+                            </td>
+                            <td>
+                                @Model.tydh
+                            </td>
+                            <td class="custom_col_active">
+                                贸易方式
+                            </td>
+                            <td>
+                                @Universal.GetStatusName(_Dictionary.Trade_mode, Model.trade_mode)
+                            </td>
+                            <td class="custom_col_active">
+                                征免性质
+                            </td>
+                            <td>
+                                @Universal.GetCcodesDisplayName(_Pccode.Exemption, Model.zmxz_code)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="custom_col_active">
+                                经营单位
+                            </td>
+                            <td>
+                                @Model.trade_code
+                            </td>
+                            <td colspan="2" class="line-wrap">
+                                @Universal.GetCcompanyDisplayName(Model.trade_code)
+                            </td>
+                            <td class="custom_col_active">
+                                运输方式
+                            </td>
+                            <td class="line-wrap">
+                                @Universal.GetCcodesDisplayName(_Pccode.Transport, Model.traf_mode) 
+                            </td>
+                            <td class="custom_col_active">
+                                运输工具
+                            </td>
+                            <td class="line-wrap">
+                                @Model.traf_name
+                            </td>
+                            <td class="custom_col_active">
+                                结汇方式
+                            </td>
+                            <td>
+                                @Universal.GetCcodesDisplayName(_Pccode.Settlement, Model.jhfs_code) 
+                            </td>
+                            <td class="custom_col_active">
+                                许可证号
+                            </td>
+                            <td>
+                                @Model.permission_no
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="custom_col_active">
+                                发货单位
+                            </td>
+                            <td>
+                                @Model.rs_code
+                            </td>
+                            <td colspan="2" class="line-wrap">
+                                @Universal.GetCcompanyDisplayName(Model.rs_code)
+                            </td>
+                            <td class="custom_col_active">
+                                运抵/起运国
+                            </td>
+                            <td class="">
+                                @Universal.GetCcodesDisplayName(_Pccode.Arrived, Model.trade_coun) 
+                            </td>
+                            <td class="custom_col_active">
+                                指运/装货港
+                            </td>
+                            <td>
+                               @Universal.GetCcodesDisplayName(_Pccode.Refers, Model.trade_port) 
+                            </td>
+                            <td class="custom_col_active">
+                                境内货源/目的地
+                            </td>
+                            <td>
+                                @Universal.GetCcodesDisplayName(_Pccode.Destination, Model.trade_area) 
+                            </td>
+                            <td class="custom_col_active">
+                                批准文号
+                            </td>
+                            <td>
+                                @Model.pzwh
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="custom_col_active">
+                                成交方式
+                            </td>
+                            <td>
+                                @Universal.GetCcodesDisplayName(_Pccode.TransactionMethod, Model.trans_mode) 
+                            </td>
+                            <td class="custom_col_active">
+                                包装种类
+                            </td>
+                            <td class="">
+                                @Universal.GetCcodesDisplayName(_Pccode.Package, Model.bzzl_code) 
+                            </td>
+                            <td class="custom_col_active">
+                                随附单证
+                            </td>
+                            <td colspan="3">
+                                @Model.sfdz
+                            </td>
+                             
+                            <td class="custom_col_active">
+                            </td>
+                            <td>
+                            </td>
+                            <td class="custom_col_active">
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="custom_col_active">
+                                运费
+                            </td>
+                            <td>
+                                @Model.yunf
+                            </td>
+                            <td>
+                                @Model.yunf2
+                            </td>
+                            <td>
+                                @Model.yunf3
+                            </td>
+                            <td class="custom_col_active">
+                                保费
+                            </td>
+                            <td>
+                                @Model.baof
+                            </td>
+                            <td>
+                                @Model.baof2
+                            </td>
+                            <td>
+                                @Model.baof3
+                            </td>
+                            <td class="custom_col_active">
+                                杂费
+                            </td>
+                            <td>
+                                @Model.zaf
+                            </td>
+                            <td>
+                                @Model.zaf2
+                            </td>
+                            <td>
+                                @Model.zaf3
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="custom_col_active">
+                                合同号
+                            </td>
+                            <td class="">
+                                @Model.htxyh
+                            </td>
+                            <td class="custom_col_active">
+                                生产厂家
+                            </td>
+                            <td colspan="3" class="line-wrap">
+                                @Model.pu_code
+                            </td>
+                            <td class="custom_col_active">
+                                用途
+                            </td>
+                            <td>
+                                @Model.pu_name
+                            </td>
+                            <td class="custom_col_active">
+                            </td>
+                            <td>
+                            </td>
+                            <td class="custom_col_active">
+                            </td>
+                            <td class="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="custom_col_active">
+                                客户订单号
+                            </td>
+                            <td>
+                                @Model.client_no
+                            </td>
+                            <td class="custom_col_active">
+                                集装箱号
+                            </td>
+                            <td colspan="3" class="line-wrap">
+                                @Model.cntnr_spec
+                            </td>
+                            <td class="custom_col_active">
+                                自天然柜数
+                            </td>
+                            <td>
+                                @Model.act_cntnrs
+                            </td>
+                            <td class="custom_col_active">
+                                标准柜数
+                            </td>
+                            <td class="">
+                                @Model.stand_cntnrs
+                            </td>
+                            <td class="custom_col_active">
+                                吨车载重量
+                            </td>
+                            <td>
+                                @Model.vehicle_cc
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="custom_col_active" colspan="2">
+                                标记唛码及备注
+                            </td>
+                            <td colspan="8" class="line-wrap">
+                                @Model.note_s
+                            </td>
+                            <td class="custom_col_active">
+                                客户流水号
+                            </td>
+                            <td>
+                                @Model.s_in_no
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            @if (Model != null && Model.infoModel != null && Model.infoModel.Count() > 0)
+            {
+             
+                <div class="portlet">
+                    <div class="portlet-title">
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-bordered table-hover" style="width:1300px;table-layout:fixed;">
+                        <thead>
+                            <tr class="active">
+                                <th scope="col" style="width:40px;">
+                                    序号
+                                </th>
+                                <th scope="col" style="width:120px;">
+                                    核增订单号
+                                </th>
+                                <th scope="col" style="width:80px;">
+                                    核增单项号
+                                </th>
+                                <th scope="col" style="width:150px;">
+                                    核增表编号
+                                </th>
+                                <th scope="col" style="width:120px;">
+                                    商品编码
+                                </th>
+                                <th scope="col" style="width:100px;">
+                                    商品名称
+                                </th>
+                                <th scope="col" style="width:200px;">
+                                    商品规格
+                                </th>
+                                <th scope="col" style="width:90px;">
+                                    申报数量
+                                </th>
+                                <th scope="col">
+                                    单位
+                                </th>
+                                <th scope="col">
+                                    币制
+                                </th>
+                                <th scope="col">
+                                    单价
+                                </th>
+                                <th scope="col">
+                                    总价
+                                </th>
+                                <th scope="col">
+                                    目的地
+                                </th>
+                                <th scope="col">
+                                    征免
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                int i = 0;
+                foreach (NuclearButtonEditInfoModel item in Model.infoModel)
+                {
+                    i++;
+                                <tr onclick="changeData('@i')">
+                                    <td>
+                                        @i
+                                    </td>
+                                    <td>
+                                        @item.in_bill_id
+                                    </td>
+                                    <td>
+                                        @item.in_g_no
+                                    </td>
+                                    <td>
+                                        @item.cust_in_bill_id
+                                    </td>
+                                    <td>
+                                        @item.code_t
+                                    </td>
+                                    <td class="line-wrap">
+                                        @item.mg_name
+                                    </td>
+                                    <td class="line-wrap">
+                                       @item.mg_spec 
+                                    </td>
+                                    <td>
+                                        @item.g_qty
+                                    </td>
+                                    <td>
+                                        @item.g_unit
+                                    </td>
+                                    <td>
+                                        @item.curr_code
+                                    </td>
+                                    <td>
+                                        @item.unit_price
+                                    </td>
+                                    <td>
+                                        @item.trade_ttl
+                                    </td>
+                                    <td>
+                                        @item.orign_coun
+                                    </td>
+                                    <td>
+                                        @item.zm_code
+                                    </td>
+                                </tr>
+                } 
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="portlet">
+                    <div class="portlet-title">
+                    </div>
+                </div>
+           
+                
+              
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover" style="width:1300px;table-layout:fixed;">
+                        <tbody>
+                            <tr>
+                                <td class="active">
+                                    核增单号
+                                </td>
+                                <td style="width:120px;">
+                                    <label id="in_bill_id"  >@Model.infoModel[0].in_bill_id</label>
+                                </td>
+                                <td class="active">
+                                    核增单项号
+                                </td>
+                                <td class="">
+                                    <label id="in_g_no"  >@Model.infoModel[0].in_g_no</label>
+                                </td>
+                                <td class="active">
+                                    备案序号
+                                </td>
+                                <td class="">
+                                    <label id="baxh"  >@Model.infoModel[0].baxh</label>
+                                </td>
+                                <td class="active">
+                                    商品编码
+                                </td>
+                                <td style="width:110px;">
+                                    <label id="code_t">@Model.infoModel[0].code_t</label>
+                                </td>
+                                <td class="active">
+                                    附加编码
+                                </td>
+                                <td>
+                                    <label id="code_s">@Model.infoModel[0].code_s</label>
+                                </td>
+                                <td class="active">
+                                    汇率
+                                </td>
+                                <td>
+                                    <label id="rate">@Model.infoModel[0].rate</label>
+                                </td>
+                                <td>
+                                    <label id="rate_id">@Model.infoModel[0].rate_id</label>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="active">
+                                    商品名称
+                                </td>
+                                <td colspan="3" class="line-wrap">
+                                    <label id="mg_name">@Model.infoModel[0].mg_name</label>
+                                </td>
+                                <td class="active" >
+                                    商品规格
+                                </td>
+                                <td colspan="9" class="line-wrap">
+                                    <label id="mg_spec">@Model.infoModel[0].mg_spec</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="active">
+                                    成交数量
+                                </td>
+                                <td>
+                                    <label id="g_qty">@Model.infoModel[0].g_qty</label>
+                                </td>
+                                <td class="active">
+                                    成交单位
+                                </td>
+                                <td class="">
+                                    <label id="g_unit">@Model.infoModel[0].g_unit</label>
+                                </td>
+                                <td class="active">
+                                    成交单价
+                                </td>
+                                <td>
+                                    <label id="unit_price">@Model.infoModel[0].unit_price</label>
+                                </td>
+                                <td class="active">
+                                    成交总价
+                                </td>
+                                <td>
+                                    <label id="trade_ttl">@Model.infoModel[0].trade_ttl</label>
+                                </td>
+                                <td class="active">
+                                    件数
+                                </td>
+                                <td>
+                                    <label id="pkgs">@Model.infoModel[0].pkgs</label>
+                                </td>
+                                <td class="active">
+                                    毛重
+                                </td>
+                                <td>
+                                    <label id="gross">@Model.infoModel[0].gross</label>
+                                </td>
+                                <td class="active">
+                                    净重
+                                </td>
+                                <td>
+                                    <label id="net">@Model.infoModel[0].net</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="active">
+                                    法定数量
+                                </td>
+                                <td>
+                                    <label id="qty_1">@Model.infoModel[0].qty_1</label>
+                                </td>
+                                <td class="active">
+                                    法定单位
+                                </td>
+                                <td class="">
+                                    <label id="unit_code1">@Model.infoModel[0].unit_code1</label>
+                                </td>
+                                <td class="active">
+                                    美元单价
+                                </td>
+                                <td>
+                                    <label id="usd_unit_price">@Model.infoModel[0].usd_unit_price</label>
+                                </td>
+                                <td class="active">
+                                    美元总价
+                                </td>
+                                <td>
+                                    <label id="usd_trade_ttl">@Model.infoModel[0].usd_trade_ttl</label>
+                                </td>
+                                <td class="active">
+                                    版本号
+                                </td>
+                                <td>
+                                    <label id="version_num">@Model.infoModel[0].version_num</label>
+                                </td>
+                                <td class="active">
+                                    存放位置
+                                </td>
+                                <td>
+                                    <label id="loc">@Model.infoModel[0].loc</label>
+                                </td>
+                                <td class="active">
+                                    币制
+                                </td>
+                                <td>
+                                    <label id="curr_code">@Model.infoModel[0].curr_code</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="active">
+                                    第二数量
+                                </td>
+                                <td>
+                                   <label id="qty_2">@Model.infoModel[0].qty_2</label>
+                                </td>
+                                <td class="active">
+                                    第二单位
+                                </td>
+                                <td class="">
+                                <label id="unit_code2">@Model.infoModel[0].unit_code2</label>
+                                </td>
+                                <td class="active">
+                                    目的/原产地
+                                </td>
+                                <td>
+                                    <label id="orign_coun">@Model.infoModel[0].orign_coun</label>
+                                </td>
+                                <td class="active">
+                                    征免
+                                </td>
+                                <td>
+                                    <label id="zm_code">@Model.infoModel[0].zm_code</label>
+                                </td>
+                                <td class="active">
+                                </td>
+                                <td>
+                                </td>
+                                <td class="active">
+                                </td>
+                                <td>
+                                </td>
+                                <td class="active">
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="portlet">
+                    <div class="portlet-title">
+                    </div>
+                </div>
+            }
+            <div class="table-responsive" style="text-align: center;">
+                <a href="javascript:;" onclick="window.close();" class="btn btn-sm red"><i class="fa fa-times">
+                </i>关闭</a>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    @Html.HiddenFor(m => m.jsonList)
+    <!-- END SAMPLE TABLE PORTLET-->
+</div>
+</center>
+@section Scripts{
+      <script src="../../Scripts/jquery-1.8.2.js" type="text/javascript"></script>
+      <script type="text/javascript">
+          function changeData(Column) {
+              if ($("#jsonList").val() != "") {
+                  var data = $("#jsonList").val();
+                  var obj = JSON.parse(data);
+                  var num = Column - 1;
+                  $("#Column").text(Column);
+                  $("#in_bill_id").text(obj[num].in_bill_id); //核增订单号
+                  $("#in_g_no").text(obj[num].in_g_no); //核增序号
+                  $("#baxh").text(obj[num].baxh); //备案序号
+                  $("#code_t").text(obj[num].code_t); //商品编码
+                  $("#code_s").text(obj[num].code_s); //附加编码
+                  $("#curr_code").text(obj[num].curr_code); //币制
+                  $("#rate").text(obj[num].rate);  //汇率
+                  $("#rate_id").text(obj[num].rate_id); //汇率
+                  $("#mg_name").text(obj[num].mg_name); //商品名称
+                  $("#mg_spec").text(obj[num].mg_spec); //商品规格
+                  $("#g_qty").text(obj[num].g_qty); //成交数量
+                  $("#g_unit").text(obj[num].g_unit); //成交单位
+                  $("#unit_price").text(obj[num].unit_price); //成交单价
+                  $("#trade_ttl").text(obj[num].trade_ttl); //成交总价
+                  $("#pkgs").text(obj[num].pkgs); //件数
+                  $("#gross").text(obj[num].gross); //毛重
+                  $("#net").text(obj[num].net);  //净重
+                  $("#qty_1").text(obj[num].qty_1); //法定数量
+                  $("#unit_code1").text(obj[num].unit_code1); //法定单位
+                  $("#usd_unit_price").text(obj[num].usd_unit_price); //美元单价
+                  $("#usd_trade_ttl").text(obj[num].usd_trade_ttl); //美元总价
+                  $("#version_num").text(obj[num].version_num); //版本号
+                  $("#loc").text(obj[num].loc); //混装号
+                  $("#qty_2").text(obj[num].qty_2); //第二数量
+                  $("#unit_code2").text(obj[num].unit_code2); //第二单位
+                  $("#orign_coun").text(obj[num].orign_coun); //目的/原产地
+                  $("#zm_code").text(obj[num].zm_code); //征免
+                  $("#pcs").text(obj[num].pcs); //
+              }
+          }
+      </script>
+}

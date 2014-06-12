@@ -1,0 +1,40 @@
+﻿@{ 
+    Layout = "~/Views/Shared/_Layout_ContMaster.cshtml";
+}
+@using Library.StringItemDict
+@section Styles{
+    <link href="@Url.Content("~/Scripts/JasonPager/default.css")?@BaseDict.Version" rel="stylesheet" type="text/css" />
+    @RenderSection("Styles", required: false)
+}
+ 
+<body class="background-white">
+    <div class="page-content_sub" id="divPageContent">
+        @RenderBody()
+    </div> 
+    <div id="divPageContentFoot">
+    </div>
+</body>
+@section Scripts{
+    <script type="text/javascript">
+        
+        $(function () { 
+
+             //onSizeChange();
+             
+        });
+
+        function onSizeChange() {  
+            $("#mainIfram", window.parent.document).height(document.body.scrollHeight);  
+        }  
+        
+        function GotoIndex(){
+            window.parent.location = "@Url.Action("Main", "Home")";
+        }
+
+        function GotoNuclearGrowth(){
+            window.location = "@Url.Action("Index", "NuclearGrowth")";
+        }
+    </script>
+    @RenderSection("Scripts", required: false)
+}
+@Html.Raw((string)this.Session[Library.StringItemDict.BaseDict.CustomScript])

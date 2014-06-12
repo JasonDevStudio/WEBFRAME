@@ -1,0 +1,124 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Styles{
+   @RenderSection("Styles", required: false) 
+}
+<!-- BEGIN HEADER -->
+<div class="header navbar navbar-inverse navbar-fixed-top">
+    <!-- BEGIN TOP NAVIGATION BAR -->
+    <div class="header-inner">
+        <!-- BEGIN LOGO -->
+        <a class="navbar-brand" href="@Url.Action("Index","Home")">
+            <img src="@Url.Content("~/Content/Images/logo.png")" alt="logo" class="img-responsive">
+        </a>
+        <!-- END LOGO -->
+        <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+        <a href="javascript:;" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <img src="@Url.Content("~/Content/Images/menu-toggler.png")" />
+        </a>
+        <!-- END RESPONSIVE MENU TOGGLER -->
+        <!-- BEGIN TOP NAVIGATION MENU -->
+        <ul class="nav navbar-nav pull-right">
+            <!-- BEGIN USER LOGIN DROPDOWN -->
+            <li class="dropdown user"><a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                data-hover="dropdown" data-close-others="true">
+                <img alt="" src="@Url.Content("~/Content/Images/avatar1_small.jpg")">
+                <span class="username">管理员</span> <i class="fa fa-angle-down"></i></a>
+                <ul class="dropdown-menu"> 
+                    <li><a href="@Url.Action("LogOut", "Home")"><i class="icon-key"></i>退出登录</a></li>
+                </ul>
+            </li>
+            <!-- END USER LOGIN DROPDOWN -->
+        </ul>
+        <!-- END TOP NAVIGATION MENU -->
+    </div>
+    <!-- END TOP NAVIGATION BAR -->
+</div>
+<!-- END HEADER -->
+<div class="clearfix">
+</div>
+<!-- BEGIN CONTAINER -->
+<div class="page-container">
+    <!-- BEGIN SIDEBAR -->
+    <div class="page-sidebar navbar-collapse collapse">
+        <!-- BEGIN SIDEBAR MENU -->
+        <ul class="page-sidebar-menu">
+            <li>
+                <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+                <div class="sidebar-toggler hidden-phone">
+                </div>
+                <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+            </li>
+            <li>
+                <!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
+                <form class="sidebar-search" action="" method="post">
+                <div class="form-container">
+                </div>
+                </form>
+                <!-- END RESPONSIVE QUICK SEARCH FORM -->
+            </li>
+            <li class=""><a href="@Url.Action("Index", "Home")"><i class="fa fa-file-text-o"></i><span class="title"> 首页</span>
+                <span class="arrow "></span></a>
+                
+            </li>
+             <li class=""><a href="javascript:;"><i class="fa fa-file-text-o"></i><span class="title"> 数据导入</span>
+                <span class="arrow "></span></a>
+                <ul class="sub-menu">
+                    <li><a href="@Url.Action("List", "Home")">核增导入</a> </li>
+                    <li><a href="@Url.Action("List2", "Home")">核扣导入</a> </li> 
+                </ul>
+            </li>
+            <li class=""><a href="javascript:;"><i class="fa fa-file-text-o"></i><span class="title"> 核增查询</span>
+                <span class="arrow "></span></a>
+                <ul class="sub-menu">
+                    <li><a href="@Url.Action("List", "Home")">核增查询</a> </li>
+                    <li><a href="@Url.Action("List2", "Home")">反馈信息查询</a> </li> 
+                </ul>
+            </li>
+            <li class=""><a href="javascript:;"><i class="fa fa-file-text-o"></i><span class="title"> 核扣查询</span>
+                <span class="arrow "></span></a>
+                <ul class="sub-menu">
+                    <li><a href="@Url.Action("List", "Home")">核扣查询</a> </li>
+                    <li><a href="@Url.Action("List2", "Home")">反馈信息查询</a> </li> 
+                </ul>
+            </li>
+           
+            <li class="last"><a href="javascript:;"><i class="fa fa-anchor"></i><span class="title">
+                关务查询</span> <span class="arrow "></span></a>
+                <ul class="sub-menu">
+                    <li><a href="ui_general.html">取样查询</a> </li>
+                    <li><a href="ui_buttons.html">查验查询</a> </li>
+                    <li><a href="ui_buttons.html">施封查询</a> </li> 
+                    <li><a href="ui_buttons.html">剪封查询</a> </li> 
+                </ul>
+            </li>
+             
+        </ul>
+        <!-- END SIDEBAR MENU -->
+    </div>
+    <!-- END SIDEBAR -->
+    <!-- BEGIN PAGE -->
+    <div class="page-content">
+    @RenderBody()
+        
+        
+    </div>
+    <!-- END PAGE -->
+</div>
+<!-- END CONTAINER -->
+<!-- BEGIN FOOTER -->
+<div class="footer">
+    <div class="footer-inner">
+        2013 &copy; Metronic by keenthemes.
+    </div>
+    <div class="footer-tools">
+        <span class="go-top"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<!-- END FOOTER -->
+
+@section Scripts{
+@RenderSection("Scripts", required: false) 
+}
+

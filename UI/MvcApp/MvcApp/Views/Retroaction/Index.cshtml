@@ -1,0 +1,251 @@
+﻿@using Library.Criterias.CustomsCriterias;
+@using Library.StringItemDict
+@using MvcApp.Models.EBooks;
+@using MvcApp.Helpers;
+
+@model PagerQuery<PagerInfo, CriteriaRetroaction, IEnumerable<RetroactionListModel>>
+@{
+    ViewBag.Title = BaseDict.WebSysTitle;
+    Layout = "~/Views/Shared/_Layout_main.cshtml";
+}
+
+@section Styles{ 
+    <link href="@Url.Content("~/Scripts/JasonPager/default.css")?@BaseDict.Version" rel="stylesheet" type="text/css" />
+}
+
+<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+<!-- /.modal -->
+<!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+<!-- BEGIN STYLE CUSTOMIZER -->
+<!-- END BEGIN STYLE CUSTOMIZER -->
+<!-- BEGIN PAGE HEADER-->
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN PAGE TITLE & BREADCRUMB-->
+        <ul class="page-breadcrumb breadcrumb">
+            <li><i class="fa fa-home"></i><a href="javascript:;" onclick="GotoIndex();">主页</a> <i
+                class="fa fa-angle-right"></i></li>
+            <li><a href="@Url.Action("Index", "Retroaction")">海关信息反馈</a></li>
+            <li></li>
+        </ul>
+        <!-- END PAGE TITLE & BREADCRUMB-->
+    </div>
+</div>
+<!-- END PAGE HEADER-->
+<div class="clearfix">
+</div>
+<!-- BEGIN PAGE CONTAINER-->
+<form id="mainForm" action="@Url.Action("Index", "Retroaction")" method="post">
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN SAMPLE TABLE PORTLET-->
+        <div class="portlet">
+            <div class="portlet-body" style="">
+                <div class="portlet box yellow">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="fa fa-cogs"></i>查询条件</div>
+                        <div class="tools">
+                            <a class="collapse" href="javascript:;"></a>
+                        </div>
+                    </div>
+                    <div class="portlet-body">
+                        <table class="col-md-12">
+                            <tr>
+                                <td class="custom-control-label control-label">
+                                    订单号
+                                </td>
+                                <td class="custom-control-control">
+                                    @Html.TextBoxFor(m => m.Search.bill_id, new { @class = "form-control" })
+                                </td>
+                                <td class="custom-control-label control-label">
+                                    客户订单号
+                                </td>
+                                <td class="custom-control-control">
+                                    @Html.TextBoxFor(m => m.Search.client_no, new { @class = "form-control" })
+                                </td>
+                                <td class="custom-control-label control-label">
+                                    核增/扣编号
+                                </td>
+                                <td class="custom-control-control">
+                                    @Html.TextBoxFor(m => m.Search.cust_bill_id, new { @class = "form-control" })
+                                </td>
+                                <td class="custom-control-label control-label">
+                                    海关审批时间
+                                </td>
+                                <td class="custom-control-control">
+                                    @Html.TextBoxFor(m => m.Search.passed_date, new { @class = "form-control Wdate", @onfocus = "WdatePicker({dateFmt:'yyyy-MM-dd'})" })
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="custom-control-label control-label">
+                                    备&nbsp;&nbsp;注
+                                </td>
+                                <td class="custom-control-control">
+                                    @Html.TextBoxFor(m => m.Search.remark, new { @class = "form-control" })
+                                </td>
+                                <td class="custom-control-label control-label">
+                                    客户名称
+                                </td>
+                                <td class="custom-control-control">
+                                    @Html.DropDownListFor(m => m.Search.lease_holder, Model.Search.CustomerNameList, new { @class = "form-control" })
+                                </td>
+                                <td class="custom-control-label control-label">
+                                </td>
+                                <td class="custom-control-control">
+                                </td>
+                                <td class="custom-control-label control-label">
+                                </td>
+                                <td class="custom-control-control">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div> 
+                <div class="portlet box blue">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="fa fa-reorder"></i>反馈信息查询列表</div>
+                        <div class="actions">
+                        <button id="btnSearch" class="btn yellow"><i class="fa fa-search"></i>
+                                &nbsp;查&nbsp;询&nbsp;</button>
+                         @*   <a class="btn yellow" id="btnSearch" href="javascript:"><i class="fa fa-search"></i>
+                                &nbsp;查&nbsp;询&nbsp;</a>*@
+                        </div>
+                    </div>
+                    <div class="portlet-body">
+                        <div class="dataTables_wrapper form-inline" id="sample_2_wrapper" role="grid">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="dataTables_length" id="sample_2_length">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="table-scrollable" style="width: 100%; white-space: nowrap; overflow-x: scroll;
+                                overflow-y: hidden;">
+                                <table class="table table-striped table-bordered table-hover">
+                            <thead>
+                                <tr class="active">
+                                <th  scope="col">
+                                        系统订单号
+                                    </th>
+                                 @*   <th scope="col">
+                                        操作
+                                    </th> *@
+                                    <th scope="col">
+                                        客户订单号
+                                    </th> 
+                                    <th scope="col">
+                                        报关单号
+                                    </th>
+                                    <th scope="col">
+                                        核增/扣编号
+                                    </th>
+                                    <th scope="col">
+                                        状态
+                                    </th>
+                                    <th scope="col">
+                                        海关批准时间
+                                    </th>
+                                    <th scope="col">
+                                        备注
+                                    </th>
+                                    </tr>
+                            </thead>
+                            <tbody>
+                                @if (Model != null && Model.DataList != null && Model.DataList.Count() > 0)
+                                {
+ 
+                                    foreach (var item in Model.DataList)
+                                    {
+                                        string str = item.bill_id.Substring(0, 1);
+                                    <tr>
+                                        <td>
+                                           @if ( str.Equals("I"))
+                                           {
+                                               <a href="javascript:;" onclick="window.parent.OpenDetailPage('@Url.Action("Details", "NuclearGrowth")','@item.bill_id','核增单详情');" >@item.bill_id</a>
+                                           }
+                                           else if(str.Equals("O"))
+                                           {
+                                             <a href="javascript:;" onclick="window.parent.OpenDetailPage('@Url.Action("Details", "NuclearButton")','@item.bill_id','核扣单详情');" >@item.bill_id</a>   
+                                           }
+                                        </td>
+                                       @* <td>
+                                            <div class="btn-group">
+                                                <a class="btn blue" href="#" data-toggle="dropdown"><i class="fa fa-cogs"></i> 操作
+                                                    <i class="fa fa-angle-down"></i></a>
+                                                <ul class="dropdown-menu pull-left">  
+                                                    <li><a href="javascript:;" onclick="window.parent.OpenDetailPage('@Url.Action("Detail","Home")','@item.bill_id','核增单详情');"><i class="fa fa-print"></i> 报关单打印</a></li>
+                                                    @*<li class="divider"></li>
+                                                    <li><a href="javascript:;" onclick="window.parent.OpenDetailPage('@Url.Action("Detail2","Home")','@item.bill_id','核扣单详情');"><i class="fa fa-print"></i> 复核表打印</a></li>  
+                                                </ul>
+                                            </div>
+                                        </td> *@
+                                        <td>
+                                            @item.client_no
+                                        </td>
+                                        <td>
+                                            @item.refer_doc
+                                        </td>
+                                        <td>
+                                            @item.cust_bill_id
+                                        </td>
+                                        <td>
+                                            @item.statusName
+                                        </td>
+                                        <td>
+                                            @item.passed_date.ToString("yyyy-MM-dd HH:mm:ss").ToFilter()
+                                        </td>
+                                        <td>
+                                           @item.remark
+                                        </td>
+                                    </tr>
+                                           
+                                    }
+
+                                }
+                                else
+                                {
+                                    <tr>
+                                        <td colspan="19" style="text-align: center">@BaseDict.QueryNoDataMsg
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="dataTables_paginate paging_bootstrap">
+                                        @if (Model != null && Model.DataList != null && Model.DataList.Count() > 0)
+                                        {
+                                            <div class="JasonPager" id="divPagerContainer">
+                                                @Html.Raw(Html.Pager("pager", Model.Pager.CurrentPageIndex, Model.Pager.PageSize, Model.Pager.RecordCount, PageMode.Numeric))
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+           
+        </div>
+        <!-- END SAMPLE TABLE PORTLET-->
+    </div>
+</div>
+<div class="clearfix">
+</div>
+</form>
+@section Scripts{
+<script src="@Url.Content("~/Scripts/My97DatePicker/WdatePicker.js")" type="text/javascript"></script>
+<script type="text/javascript">
+    $("#btnSearch").click(function () {
+
+        $("#mainForm").submit();
+
+    });
+</script>
+}

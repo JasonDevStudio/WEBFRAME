@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = Library.StringItemDict.BaseDict.WebSysTitle;
+    Layout = "~/Views/Shared/_Layout_main.cshtml";
+}
+@Html.Raw(ViewData["test"].ToString())
+ <iframe class="background-white" id="mainIfram" scrolling="no" style="width:100%;height:auto;min-height:1130px"  frameborder="0"  src="@Url.Action("Index","Home")"></iframe>
+ @section Scripts{
+    <script type="text/javascript">
+        function OpenDetailPage(url,id,title) {
+            //OpenPage(url+"?id="+id,title,1300,600);
+            //window.showModalDialog(url + "?id=" + id, null, "dialogWidth=1200px;dialogHeight=600px;scroll=no")
+            window.open(url + "?id=" + id, title, "alwaysRaised=yes, height=600, width=1320, top=0,left=0, toolbar=no, menubar=no, scrollbars=yes, resizable=yes,location=no, status=no");
+        }
+        
+    </script>
+ }
+
+

@@ -1,0 +1,940 @@
+﻿@{ 
+    Layout = "~/Views/Shared/_Layout_Content.cshtml";
+}
+
+<div class="col-md-12" style="width:1200px;">
+    <!-- BEGIN SAMPLE TABLE PORTLET-->
+    <div class="portlet">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-bell-o"></i>核增单详情</div>
+            <div class="tools">
+                <a class="collapse" href="javascript:;"></a>
+               @* <a class="config" href="#portlet-config" data-toggle="modal"></a>
+                <a class="reload" href="javascript:;"></a>
+                <a class="remove" href="javascript:;"></a>*@
+            </div>
+        </div>
+        <div class="portlet-body" style="height:550px;overflow:auto;">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover"> 
+                    <tbody>
+                        <tr>
+                            <td class="custom_col_active">
+                                订单号
+                            </td>
+                            <td>
+                                IE20140521
+                            </td>
+                            <td class="custom_col_active">
+                                通关状态
+                            </td>
+                            <td class="success">
+                                预审通过
+                            </td>
+                            <td class="custom_col_active">
+                                核增日期
+                            </td>
+                            <td>
+                                2014-5-27
+                            </td>
+                            <td class="custom_col_active">
+                                报关单号
+                            </td>
+                            <td>
+                                BGD12345678
+                            </td>
+                            <td class="custom_col_active">
+                                MCC业务号
+                            </td>
+                            <td>
+                                MCC123456781
+                            </td>
+                            <td class="custom_col_active">
+                                车牌号
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="custom_col_active">
+                                货物类型
+                            </td>
+                            <td>
+                                监管
+                            </td>
+                            <td class="custom_col_active">
+                                客户名称
+                            </td>
+                            <td>
+                                八达(0531)
+                            </td>
+                            <td class="custom_col_active">
+                                入仓方式
+                            </td>
+                            <td>
+                                省内手册
+                            </td>
+                            <td class="custom_col_active">
+                                报关类型
+                            </td>
+                            <td>
+                                一般出口报关单
+                            </td>
+                            <td class="custom_col_active">
+                                转关条码
+                            </td>
+                            <td>
+                            </td>
+                            <td class="custom_col_active">
+                            司机本编号
+                            </td>
+                            <td>
+                            
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="custom_col_active">
+                                总件数
+                            </td>
+                            <td class="warning">
+                                24
+                            </td>
+                            <td class="custom_col_active">
+                                总毛重
+                            </td>
+                            <td class="warning">
+                                559
+                            </td>
+                            <td class="custom_col_active">
+                                总净重
+                            </td>
+                            <td class="warning">
+                                487
+                            </td>
+                            <td class="custom_col_active">
+                                总价值
+                            </td>
+                            <td class="warning">
+                                2440.6
+                            </td>
+                            <td class="custom_col_active">
+                                币制
+                            </td>
+                            <td>
+                                USD
+                            </td>
+                            <td class="custom_col_active">
+                                退税标志
+                            </td>
+                            <td>
+                                是
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="custom_col_active">
+                                核增备注
+                            </td>
+                            <td class="" colspan="3">
+                                KUMSNYC1405021|八达
+                            </td>
+                            <td class="custom_col_active">
+                                存放地点
+                            </td>
+                            <td class="">
+                                监管二仓
+                            </td>
+                            <td class="custom_col_active">
+                                核增类型
+                            </td>
+                            <td class="">
+                                出口入仓
+                            </td>
+                            <td class="custom_col_active">
+                                电子账册编号
+                            </td>
+                            <td>
+                                123456789012
+                            </td>
+                            <td class="custom_col_active">
+                                核增编号
+                            </td>
+                            <td>
+                                123456789012
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="custom_col_active">
+                                进出口岸
+                            </td>
+                            <td>
+                                梅林海关
+                            </td>
+                            <td class="custom_col_active">
+                                备案号
+                            </td>
+                            <td class="">
+                                123456789012
+                            </td>
+                            <td class="custom_col_active">
+                                进出口日期
+                            </td>
+                            <td>
+                                2014-5-27
+                            </td>
+                            <td class="custom_col_active">
+                                提运单号
+                            </td>
+                            <td>
+                                BGD123
+                            </td>
+                            <td class="custom_col_active">
+                                贸易方式
+                            </td>
+                            <td>
+                                进料对口
+                            </td>
+                            <td class="custom_col_active">
+                                征免性质
+                            </td>
+                            <td>
+                                一般征税
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="custom_col_active">
+                                经营单位
+                            </td>
+                            <td>
+                                1234567890
+                            </td>
+                            <td class="" colspan="2">
+                                深圳同行兴业美工刀具有限公司
+                            </td>
+                            <td class="custom_col_active">
+                                运输方式
+                            </td>
+                            <td class="">
+                                监管仓库
+                            </td>
+                            <td class="custom_col_active">
+                                运输工具
+                            </td>
+                            <td>
+                                BGD123123
+                            </td>
+                            <td class="custom_col_active">
+                                结汇方式
+                            </td>
+                            <td>
+                                信汇
+                            </td>
+                             <td class="custom_col_active">
+                                许可证号
+                            </td>
+                            <td colspan="3">
+                                12345678
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="custom_col_active">
+                                发货单位
+                            </td>
+                            <td>
+                                1234567890
+                            </td>
+                            <td class="" colspan="2">
+                                深圳同行兴业美工刀具有限公司
+                            </td>
+                            <td class="custom_col_active">
+                                运抵/起运国
+                            </td>
+                            <td class="">
+                                中国
+                            </td>
+                            <td class="custom_col_active">
+                                指运/装货港
+                            </td>
+                            <td>
+                                中国境内
+                            </td>
+                            <td class="custom_col_active">
+                                境内货源/目的地
+                            </td>
+                            <td>
+                                深圳特区
+                            </td>
+                             <td class="custom_col_active">
+                                批准文号
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="custom_col_active">
+                                成交方式
+                            </td>
+                            <td>
+                                FDB
+                            </td>
+                            <td class="custom_col_active">
+                                包装种类
+                            </td>
+                            <td class="">
+                                纸箱
+                            </td>
+                            <td class="custom_col_active">
+                                随附单证
+                            </td>
+                            <td>
+                                FDB123456
+                            </td>
+                            <td class="custom_col_active">
+                                 
+                            </td>
+                            <td>
+                                 
+                            </td>
+                           <td class="custom_col_active">
+                                 
+                            </td>
+                            <td>
+                                 
+                            </td> 
+                        </tr>
+                        <tr>
+                        <td class="custom_col_active">
+                                运费
+                            </td>
+                            <td>
+                                5000000
+                            </td>
+                            <td>
+                                5000000
+                            </td>
+                            <td>
+                                5000000
+                            </td>
+                            <td class="custom_col_active">
+                                保费
+                            </td>
+                            <td>
+                                5000000
+                            </td>
+                            <td>
+                                5000000
+                            </td>
+                            <td>
+                                5000000
+                            </td>
+                            <td class="custom_col_active">
+                                杂费
+                            </td>
+                            <td>
+                                5000000
+                            </td>
+                            <td>
+                                5000000
+                            </td>
+                            <td>
+                                5000000
+                            </td>
+                            
+                        </tr>
+                        <tr>
+                            <td class="custom_col_active">
+                                合同号
+                            </td>
+                            <td class="">
+                                20140513131
+                            </td>
+                            <td class="custom_col_active">
+                                生产厂家
+                            </td>
+                            <td colspan="3">
+                                中国深圳市深国际华南物流有限公司
+                            </td>
+                            <td class="custom_col_active">
+                                用途
+                            </td>
+                            <td>
+                                用途填写
+                            </td>
+                            <td class="custom_col_active">
+                                操作员
+                            </td>
+                            <td>
+                                张三李四
+                            </td>
+                             <td class="custom_col_active">
+                                修改员
+                            </td>
+                            <td class="">
+                                张三李四
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="custom_col_active">
+                                客户订单号
+                            </td>
+                            <td>
+                                1234567890123
+                            </td>
+                            <td class="custom_col_active">
+                                集装箱号
+                            </td>
+                            <td colspan="3">
+                            </td>
+                            <td class="custom_col_active">
+                                自天然柜数
+                            </td>
+                            <td>
+                                0
+                            </td>
+                            <td class="custom_col_active">
+                                标准柜数
+                            </td>
+                            <td class="">
+                                0
+                            </td>
+                            <td class="custom_col_active">
+                                吨车载重量
+                            </td>
+                            <td>
+                                123.00
+                            </td>
+                        </tr>
+                        <tr>
+                             <td class="custom_col_active" colspan="2">
+                                标记唛码及备注
+                            </td>
+                            <td colspan="8">
+                            </td>
+                            
+                            <td class="custom_col_active">
+                                客户流水号
+                            </td>
+                            <td>
+                                IE2014052513
+                            </td>
+                           
+                        </tr> 
+                        @*<tr>
+                            <td>
+                                4
+                            </td>
+                            <td class="custom_col_active">
+                                active
+                            </td>
+                            <td class="success">
+                                success
+                            </td>
+                            <td class="warning">
+                                warning
+                            </td>
+                            <td class="danger">
+                                danger
+                            </td>
+                        </tr>*@
+                    </tbody>
+                </table>
+            </div>
+            <div class="portlet">
+            <div class="portlet-title"></div>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered table-bordered table-hover">
+                    <thead>
+                        <tr class="active">
+                            <th scope="col">
+                                序号
+                            </th>
+                            <th scope="col">
+                                商品编码
+                            </th>
+                            <th scope="col">
+                                商品名称
+                            </th>
+                            <th scope="col">
+                                商品风格
+                            </th>
+                            <th scope="col">
+                                申报数量
+                            </th>
+                            <th scope="col">
+                                单位
+                            </th>
+                            <th scope="col">
+                                币制
+                            </th>
+                            <th scope="col">
+                                单价
+                            </th>
+                            <th scope="col">
+                                总价
+                            </th>
+                            <th scope="col">
+                                目的地
+                            </th>
+                            <th scope="col">
+                                征免
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                1
+                            </td>
+                            <td>
+                                8211940000
+                            </td>
+                            <td>
+                                塑胶盒装美工刀具
+                            </td>
+                            <td>
+                                碳钢制刀片|有刃口
+                            </td>
+                            <td>
+                                161
+                            </td>
+                            <td>
+                                千克
+                            </td>
+                            <td>
+                                USD
+                            </td>
+                            <td>
+                                5.1
+                            </td>
+                            <td>
+                                145.6
+                            </td>
+                            <td>
+                                美国
+                            </td>
+                            <td>
+                                全免
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                8211940000
+                            </td>
+                            <td>
+                                塑胶盒装美工刀具
+                            </td>
+                            <td>
+                                碳钢制刀片|有刃口
+                            </td>
+                            <td>
+                                161
+                            </td>
+                            <td>
+                                千克
+                            </td>
+                            <td>
+                                USD
+                            </td>
+                            <td>
+                                5.1
+                            </td>
+                            <td>
+                                145.6
+                            </td>
+                            <td>
+                                美国
+                            </td>
+                            <td>
+                                全免
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                3
+                            </td>
+                            <td>
+                                8211940000
+                            </td>
+                            <td>
+                                塑胶盒装美工刀具
+                            </td>
+                            <td>
+                                碳钢制刀片|有刃口
+                            </td>
+                            <td>
+                                161
+                            </td>
+                            <td>
+                                千克
+                            </td>
+                            <td>
+                                USD
+                            </td>
+                            <td>
+                                5.1
+                            </td>
+                            <td>
+                                145.6
+                            </td>
+                            <td>
+                                美国
+                            </td>
+                            <td>
+                                全免
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                4
+                            </td>
+                            <td>
+                                8211940000
+                            </td>
+                            <td>
+                                塑胶盒装美工刀具
+                            </td>
+                            <td>
+                                碳钢制刀片|有刃口
+                            </td>
+                            <td>
+                                161
+                            </td>
+                            <td>
+                                千克
+                            </td>
+                            <td>
+                                USD
+                            </td>
+                            <td>
+                                5.1
+                            </td>
+                            <td>
+                                145.6
+                            </td>
+                            <td>
+                                美国
+                            </td>
+                            <td>
+                                全免
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                5
+                            </td>
+                            <td>
+                                8211940000
+                            </td>
+                            <td>
+                                塑胶盒装美工刀具
+                            </td>
+                            <td>
+                                碳钢制刀片|有刃口
+                            </td>
+                            <td>
+                                161
+                            </td>
+                            <td>
+                                千克
+                            </td>
+                            <td>
+                                USD
+                            </td>
+                            <td>
+                                5.1
+                            </td>
+                            <td>
+                                145.6
+                            </td>
+                            <td>
+                                美国
+                            </td>
+                            <td>
+                                全免
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                6
+                            </td>
+                            <td>
+                                8211940000
+                            </td>
+                            <td>
+                                塑胶盒装美工刀具
+                            </td>
+                            <td>
+                                碳钢制刀片|有刃口
+                            </td>
+                            <td>
+                                161
+                            </td>
+                            <td>
+                                千克
+                            </td>
+                            <td>
+                                USD
+                            </td>
+                            <td>
+                                5.1
+                            </td>
+                            <td>
+                                145.6
+                            </td>
+                            <td>
+                                美国
+                            </td>
+                            <td>
+                                全免
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                7
+                            </td>
+                            <td>
+                                8211940000
+                            </td>
+                            <td>
+                                塑胶盒装美工刀具
+                            </td>
+                            <td>
+                                碳钢制刀片|有刃口
+                            </td>
+                            <td>
+                                161
+                            </td>
+                            <td>
+                                千克
+                            </td>
+                            <td>
+                                USD
+                            </td>
+                            <td>
+                                5.1
+                            </td>
+                            <td>
+                                145.6
+                            </td>
+                            <td>
+                                美国
+                            </td>
+                            <td>
+                                全免
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="portlet">
+            <div class="portlet-title"></div>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover"> 
+                    <tbody>
+                        <tr>
+                            <td class="active">
+                                序号
+                            </td>
+                            <td>
+                                IE20140521
+                            </td>
+                            <td class="active">
+                                备案序号
+                            </td>
+                            <td class="">
+                                1234567
+                            </td>
+                            <td class="active">
+                                商品编码
+                            </td>
+                            <td>
+                                IE20140521
+                            </td>
+                            <td class="active">
+                                附加编码
+                            </td>
+                            <td>
+                                BGD12345678
+                            </td>
+                            <td class="active">
+                                币制
+                            </td>
+                            <td>
+                                USD
+                            </td>
+                            <td class="active">
+                                汇率
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+                                7.6
+                            </td>
+                            <td> 
+                            </td>
+                        </tr>
+                         <tr>
+                            <td class="active">
+                                商品名称
+                            </td>
+                            <td colspan="3">
+                                IE20140521
+                            </td>
+                            <td class="active">
+                                商品规格
+                            </td>
+                            <td colspan="9">
+                                1234567
+                            </td> 
+                        </tr>
+                        <tr>
+                            <td class="active">
+                                成交数量
+                            </td>
+                            <td>
+                                28
+                            </td>
+                            <td class="active">
+                                成交单位
+                            </td>
+                            <td class="">
+                                千克
+                            </td>
+                            <td class="active">
+                                成交单价
+                            </td>
+                            <td>
+                                6.4
+                            </td>
+                            <td class="active">
+                                成交总价
+                            </td>
+                            <td>
+                                145.6
+                            </td>
+                            <td class="active">
+                                件数
+                            </td>
+                            <td>
+                                14
+                            </td>
+                            <td class="active">
+                                毛重
+                            </td>
+                            <td>
+                               37
+                            </td>
+                             <td class="active">
+                                净重
+                            </td>
+                            <td> 
+                            28
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="active">
+                                法定数量
+                            </td>
+                            <td>
+                                28
+                            </td>
+                            <td class="active">
+                                法定单位
+                            </td>
+                            <td class="">
+                                千克
+                            </td>
+                            <td class="active">
+                                美元单价
+                            </td>
+                            <td>
+                                6.4
+                            </td>
+                            <td class="active">
+                                美元总价
+                            </td>
+                            <td>
+                                145.6
+                            </td>
+                            <td class="active">
+                                版本号
+                            </td>
+                            <td>
+                                14
+                            </td>
+                            <td class="active">
+                                混装号
+                            </td>
+                            <td>
+                               37000
+                            </td>
+                             <td class="active">
+                                 
+                            </td>
+                            <td> 
+                            
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="active">
+                                第二数量
+                            </td>
+                            <td>
+                                0
+                            </td>
+                            <td class="active">
+                                第二单位
+                            </td>
+                            <td class="">
+                                 
+                            </td>
+                            <td class="active">
+                                目的/原产地
+                            </td>
+                            <td>
+                                美利坚合众国
+                            </td>
+                            <td class="active">
+                                征免
+                            </td>
+                            <td>
+                                全免
+                            </td>
+                            <td class="active">
+                                PCS
+                            </td>
+                            <td>
+                                1400
+                            </td>
+                            <td class="active">
+                                 
+                            </td>
+                            <td>
+                                
+                            </td>
+                             <td class="active">
+                                 
+                            </td>
+                            <td> 
+                            
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="portlet">
+            <div class="portlet-title"></div>
+            </div>
+            <div class="table-responsive" style="text-align:center;">
+                <a href="javascript:;" onclick="closeDialog();" class="btn btn-lg red"><i class="fa fa-times"></i> 关闭</a>
+            </div>
+        </div>
+    </div>
+    <!-- END SAMPLE TABLE PORTLET-->
+</div>

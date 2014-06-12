@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+    <menu id="m_1" url="~/Home/Index" name="首页" visible="true">
+        <authority value="华南"></authority>
+    </menu>
+    <menu id="m_3" url="" name="入出仓查询" visible="false">
+        <submenu id="m_3_1" name="入仓查询" url="~/NuclearGrowth/Index"></submenu>
+        <submenu id="m_3_2" name="出仓查询" url="~/NuclearButton/Index"></submenu>
+        <submenu id="m_3_3" name="反馈信息查询" url="~/Retroaction/Index"></submenu>
+        <authority value="华南"></authority>
+    </menu>
+    <menu id="m_3" url="" name="入出仓查询" visible="true">
+        <submenu id="m_3_1" name="入仓查询" url="~/NuclearGrowth/Index"></submenu>
+        <submenu id="m_3_2" name="出仓查询" url="~/NuclearButton/Index"></submenu>
+        <submenu id="m_3_3" name="反馈信息查询" url="~/Retroaction/Index"></submenu>
+        <authority value="华南"></authority>
+    </menu>
+</root>

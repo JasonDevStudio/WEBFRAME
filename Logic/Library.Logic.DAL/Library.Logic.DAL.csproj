@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EF300BEB-3C7D-4CE5-9EDC-0634E20C0F8B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Library.Logic.DAL</RootNamespace>
+    <AssemblyName>Library.Logic.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DBBasicData\Classes\LogicBDatadictionary.cs" />
+    <Compile Include="DBBasicData\Interfaces\ILogicBDatadictionary.cs" />
+    <Compile Include="DBCustoms\Classes\LogicDetaildata.cs" />
+    <Compile Include="DBCustoms\Classes\LogicPrepareInHead.cs" />
+    <Compile Include="DBCustoms\Classes\LogicVHk.cs" />
+    <Compile Include="DBCustoms\Classes\LogicVHz .cs" />
+    <Compile Include="DBCustoms\Classes\LogicWebproCusreturn.cs" />
+    <Compile Include="DBCustoms\Interfaces\ILogicDetaildata.cs" />
+    <Compile Include="DBCustoms\Interfaces\ILogicPrepareInHead.cs" />
+    <Compile Include="DBCustoms\Interfaces\ILogicVHk.cs" />
+    <Compile Include="DBCustoms\Interfaces\ILogicVHz.cs" />
+    <Compile Include="DBCustoms\Interfaces\ILogicWebproCusreturn.cs" />
+    <Compile Include="PowerSystem\Classes\LogicSysUser.cs" />
+    <Compile Include="PowerSystem\Interfaces\ILogicSysUser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\Library.Common\Library.Common.csproj">
+      <Project>{40EA1AD9-39D8-4A66-B256-97BA293D5741}</Project>
+      <Name>Library.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\Library.StringItemDict\Library.StringItemDict.csproj">
+      <Project>{FCF59BE5-90A2-4994-810D-BC4959B78F04}</Project>
+      <Name>Library.StringItemDict</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Kernel\Library.Kernel.DataBaseHelper\Library.Kernel.DataBaseHelper.csproj">
+      <Project>{3633A9EC-7326-49C4-A6AB-35453A5B52C5}</Project>
+      <Name>Library.Kernel.DataBaseHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Model\Criteria\Library.Criterias\Library.Criterias.csproj">
+      <Project>{AB4F9CB8-D540-49C0-BE65-A973A3A54D52}</Project>
+      <Name>Library.Criterias</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Model\Models\Library.Models\Library.Models.csproj">
+      <Project>{06F73403-B8DE-4DED-B69D-D46BB6954DB5}</Project>
+      <Name>Library.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Integrates\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

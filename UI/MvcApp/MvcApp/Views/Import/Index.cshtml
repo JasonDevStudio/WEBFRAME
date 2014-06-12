@@ -1,0 +1,10 @@
+﻿@using Library.StringItemDict;
+@using Library.Criterias.CustomsCriterias;
+@using MvcApp.Models.ImportExport;
+@model PagerQuery<PagerInfo, CriteriaImport, IEnumerable<ImportListModel>>
+@{
+    ViewBag.Title = BaseDict.WebSysTitle;
+    Layout = "~/Views/Shared/_Layout_Content.cshtml";
+}
+
+<a href="javascript:"  >导入</a>

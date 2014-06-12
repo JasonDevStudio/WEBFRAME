@@ -1,0 +1,52 @@
+/* here you can put your own css to customize and override the theme */
+.sub_menu_active
+{
+    background: #1b8fd3 !important;
+    color: #ffffff !important;
+}
+.line
+{
+    border-style: none none solid none;
+    border-bottom-width: 1px;
+    border-bottom-color: #C0C0C0;
+    height: 2px;
+}
+
+.page-content_sub
+{
+    background-color: #fff;
+    margin-top: 0px;
+    min-height: 760px;
+    /*padding: 25px 20px 20px 20px;*/
+}
+.background-white
+{
+    background-color:#fff!important;
+}
+
+.custom_col_active
+{
+    min-width : 80px;
+    max-width : 120px;
+    background-color:#f5f5f5;
+}
+.line-wrap
+{ 
+    word-break: break-all !important;
+    word-wrap: break-word !important;
+    white-space:normal !important;
+}
+
+.custom-control-label
+{
+    width:100px !important;
+    text-align:right !important;
+    padding-right:10px !important;
+}
+
+.custom-control-control
+{
+    text-align:left !important;
+    padding-left:10px !important;
+    padding-right:10px !important;
+}
